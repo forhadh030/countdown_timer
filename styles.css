@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #fff;
+    width: auto;
+    text-align: center;
+}
+
+.ribbon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+.event-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.event-input label {
+    margin-right: 10px;
+}
+
+.event-list li {
+    margin-bottom: 5px;
+    list-style-type: none;
+}

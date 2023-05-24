@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container"></div>
+        <div class="ribbon">
+            <h1>Countdown Timer</h1>
+            <div class="event-input">
+                <label for="eventDate">Event Date:</label>
+                <input type="date" id="eventDate">
+                <label for="eventTime">Event Time:</label>
+                <input type="time" id="eventTime">
+                <button onclick="saveEvent()">Save Event</button>
+            </div>
+            <h2>Events:</h2>
+            <ul id="eventList" class="event-list"></ul>
+        </div>
+    </div>
+</body>
+</html>
