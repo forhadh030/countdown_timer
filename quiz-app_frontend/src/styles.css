@@ -1,0 +1,30 @@
+/* Ensure the container is taking full height */
+#container {
+  height: 100vh; /* Full height of viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  padding: 10px 20px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+}

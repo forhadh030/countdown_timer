@@ -1,0 +1,38 @@
+<div id="results">
+  <h2>Your Score: {{ score }}/{{ totalQuestions }}</h2>
+
+  <div class="questions-container">
+    <div *ngFor="let question of paginatedQuestions" class="question-card">
+      <p class="question-text">{{ question.questionText }}</p>
+      <ul>
+        <li
+          *ngFor="let option of question.options"
+          [ngClass]="{
+            correct: option === question.correctOption,
+            incorrect: option === question.selectedOption && option !== question.correctOption
+          }"
+          [ngStyle]="{
+            'background-color': question.selectedOption === option
+              ? (option === question.correctOption ? '#d4edda' : '#f8d7da')
+              : '',
+            'color': question.selectedOption === option
+              ? (option === question.correctOption ? '#155724' : '#721c24')
+              : ''
+          }"
+        >
+          {{ option }}
+        </li>
+      </ul>           
+    </div>
+  </div>
+
+  <div class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages() }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage >= totalPages()">Next</button>
+  </div>
+
+  <div>
+    <button class="home" (click)="navigateToHome()">Go Home</button>
+  </div>
+</div>

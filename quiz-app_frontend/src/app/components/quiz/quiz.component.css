@@ -1,0 +1,155 @@
+/* General page layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ensure full screen height */
+}
+
+/* Main container for layout */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centers content vertically */
+  text-align: center;
+  flex-grow: 1; /* Allow main content to take available space */
+  padding-top: 20px; /* Adjust space from header */
+  position: relative; /* Ensure modal is centered within this container */
+}
+
+/* Header styling */
+header {
+  height: 60px; /* Fixed height for header */
+  background-color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 0 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  width: 100%; /* Ensure full width */
+  z-index: 100; /* Keep header on top */
+}
+
+/* Styling for navigation links */
+header a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/* Main quiz content */
+main {
+  flex-grow: 1;
+  background-color: #f5f5f5;
+  margin-top: 80px; /* Adjust the top margin to account for the fixed header height */
+  padding: 20px;
+}
+
+/* Display current question number */
+.question-status {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+/* Quiz card styling */
+.card {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Button styling for card */
+.card h2 {
+  margin-bottom: 20px;
+}
+
+.card button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: white;
+  color: #007bff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.card button.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Navigation buttons */
+.card .navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card .navigation button {
+  width: 48%;
+}
+
+/* Popup confirmation modal */
+.quit-confirmation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure modal is on top */
+  padding: 10px; /* Prevent overflow */
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Limit the size of the popup */
+}
+
+.popup-content p {
+  font-size: 1.2rem;
+}
+
+.popup-content button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #0056b3;
+}
+
+.popup-content button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

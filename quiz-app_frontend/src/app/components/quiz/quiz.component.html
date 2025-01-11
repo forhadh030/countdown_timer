@@ -1,0 +1,50 @@
+<!-- quiz.component.html -->
+<main>
+  <div class="card">
+    <h2>Question {{ currentQuestionIndex + 1 }} of {{ totalQuestions }}</h2>
+    <p>{{ currentQuestion?.questionText }}</p>
+
+    <div *ngFor="let option of options">
+      <button
+        [class.selected]="selectedAnswers[currentQuestionIndex] === option"
+        (click)="selectAnswer(option)"
+      >
+        {{ option }}
+      </button>
+    </div>
+
+    <div class="navigation">
+      <button (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">Previous</button>
+      <!-- Quit Button -->
+      <button (click)="quitQuiz()">Quit</button>
+      <button 
+        *ngIf="currentQuestionIndex < totalQuestions - 1" 
+        (click)="nextQuestion()"
+      >
+        Next
+      </button>
+      <button 
+        *ngIf="currentQuestionIndex === totalQuestions - 1" 
+        (click)="submitQuiz()"
+      >
+        Submit
+      </button>
+    </div> 
+
+    <!-- Display current question number -->
+    <div class="question-status">
+      <p>{{ currentQuestionIndex + 1 }} / {{ totalQuestions }}</p>
+    </div>
+
+    <!-- Quit Confirmation Popup -->
+    <div *ngIf="showQuitConfirmation" class="quit-confirmation">
+      <div class="popup-content">
+        <p>Are you sure you want to quit the quiz?</p>
+        <div class="button-group">
+          <button (click)="confirmQuit()">Yes</button>
+          <button (click)="cancelQuit()">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

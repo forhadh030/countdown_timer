@@ -1,0 +1,91 @@
+#results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.questions-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+  gap: 20px; /* Space between the cards */
+  width: 100%; /* Ensure the container spans the full width */
+  max-width: 1200px; /* Optional: limit the width of the grid */
+}
+
+.question-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  /* No need for flex properties here as grid will handle the layout */
+}
+
+.question-text {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.correct {
+  background-color: #d4edda; /* Light green */
+  color: #155724;           /* Dark green */
+}
+
+.incorrect {
+  background-color: #f8d7da; /* Light red */
+  color: #721c24;            /* Dark red */
+}
+
+li {
+  padding: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+li.disabled {
+  pointer-events: none; /* Disable click events */
+}
+
+.pagination-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #c0c0c0;
+  cursor: not-allowed;
+}
+
+.home {
+  margin-top: 20px;
+}
+
+.pagination-controls {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination-controls span {
+  font-size: 16px;
+}
